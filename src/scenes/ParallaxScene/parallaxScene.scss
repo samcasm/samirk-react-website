@@ -1,0 +1,203 @@
+.hidden {
+    display: none;
+}
+
+.overflow-hidden{
+    overflow: hidden;
+}
+
+.active {
+    color: #383838 !important; 
+    background-color: #fff !important;  
+}
+
+.shrink {
+    padding-top: 20px
+}
+
+.popup {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #383838;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    .menu{
+        width: 100%;
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            li{
+                text-decoration: none; 
+                    padding: 1.5em 1em; 
+                    color: #fff; 
+                    background-color: #383838; 
+                    transition: background-color .5s ease;
+                &:hover{
+                    background-color: white;
+                    color: #383838;
+                }
+            }
+        }
+    }
+}
+
+.parallax-scene{
+    background-color:#383838;
+    width: 100%;
+    height: 93vh;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;
+
+    .menu {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #383838;
+        z-index: 100;
+    }
+
+    #navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 10%;
+        background-color: #383838;
+        z-index: 1000;
+
+        .burger-menu {
+            display: none;
+        }
+
+        .initials{
+            cursor: pointer;
+            padding-left: 12%;
+        }
+
+        ul {
+            background-color: #383838;
+            margin: 0; 
+            padding-right: 12%; 
+            list-style-type: none; 
+            text-align: center; 
+
+            li{
+                display: inline; 
+                
+                a {
+                    text-decoration: none; 
+                    padding: 0.5em 1em; 
+                    color: #fff; 
+                    background-color: #383838; 
+                    transition: background-color .5s ease;
+
+                    .active {
+                        color: #383838 !important; 
+                        background-color: #fff !important;  
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .description{
+        width: 52%;
+        text-align: center;
+
+        p{
+            margin: 0;
+            font-size: 16px;
+        }
+    }
+
+    
+}
+
+.burger-menu,
+.burger-menu.open {
+    cursor: pointer;
+    background: #383838;
+    padding: 10px;
+    margin-right: 12%;
+}
+
+.burger-menu .bar1,
+.bar2,
+.bar3 {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+.burger-menu.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-4px, 4px);
+  transform: rotate(-45deg) translate(-4px, 4px);
+}
+
+.burger-menu.open .bar2 {
+  opacity: 0;
+}
+
+.burger-menu.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -6px);
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+@media only screen and (max-width: 600px) {
+    .parallax-scene{
+        height: 100vh;
+
+        #navbar{
+            .burger-menu{
+                display: inline-block;
+            }
+            ul{
+                display: none;
+            }
+        }
+        .description{
+            font-size: 1.9em;
+        }
+        .menu {
+            ul {
+                cursor: pointer;
+                list-style-type: none;
+                padding: 0;
+                width: 100%;
+                text-align: center;
+                li{
+                    padding: 20px 0px;
+
+                    &:hover{
+                        background-color: white;
+                        color: #383838;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
